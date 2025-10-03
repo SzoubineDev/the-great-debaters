@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team - The Great Debaters FST Errachidia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#660c1b',
+              primaryLight: '#8a1225',
+              primaryDark: '#4a0913',
+              secondary: '#d4af37',
+              accent: '#a52a2a',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #660c1b 0%, #4a0913 50%, #8a1225 100%);
+      }
+      .section-bg {
+        background: linear-gradient(135deg, #f8f4f4 0%, #f0e6e8 100%);
+      }
+      .dark .section-bg {
+        background: linear-gradient(135deg, #2d1b1f 0%, #3a2127 100%);
+      }
+
+      /* Language Switcher Styles */
+      .language-switcher {
+        position: relative;
+        display: inline-block;
+      }
+
+      .lang-btn {
+        background: rgba(102, 12, 27, 0.1);
+        border: 1px solid rgba(102, 12, 27, 0.3);
+        color: #660c1b;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+      }
+
+      .dark .lang-btn {
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        color: #d4af37;
+      }
+
+      .lang-btn:hover {
+        background: rgba(102, 12, 27, 0.2);
+        transform: translateY(-1px);
+      }
+
+      .dark .lang-btn:hover {
+        background: rgba(212, 175, 55, 0.2);
+      }
+
+      .lang-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border: 1px solid rgba(102, 12, 27, 0.2);
+        border-radius: 12px;
+        padding: 8px;
+        margin-top: 8px;
+        min-width: 120px;
+        box-shadow: 0 8px 25px rgba(102, 12, 27, 0.15);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .dark .lang-dropdown {
+        background: #2d1b1f;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .lang-dropdown.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .lang-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #660c1b;
+        font-weight: 500;
+      }
+
+      .dark .lang-option {
+        color: #d4af37;
+      }
+
+      .lang-option:hover {
+        background: rgba(102, 12, 27, 0.1);
+      }
+
+      .dark .lang-option:hover {
+        background: rgba(212, 175, 55, 0.1);
+      }
+
+      .lang-option.active {
+        background: rgba(102, 12, 27, 0.15);
+        color: #660c1b;
+      }
+
+      .dark .lang-option.active {
+        background: rgba(212, 175, 55, 0.15);
+        color: #d4af37;
+      }
+
+      .lang-flag {
+        width: 20px;
+        height: 15px;
+        border-radius: 2px;
+        object-fit: cover;
+      }
+
+      .lang-text {
+        font-size: 14px;
+      }
+
+      /* ===== CLEAN RTL/LTR SUPPORT ===== */
+
+      /* Base direction classes */
+      .ltr {
+        direction: ltr;
+      }
+
+      .rtl {
+        direction: rtl;
+      }
+
+      /* Text alignment */
+      .ltr .text-left {
+        text-align: left !important;
+      }
+      .ltr .text-right {
+        text-align: right !important;
+      }
+      .ltr .text-center {
+        text-align: center !important;
+      }
+
+      .rtl .text-left {
+        text-align: right !important;
+      }
+      .rtl .text-right {
+        text-align: left !important;
+      }
+      .rtl .text-center {
+        text-align: center !important;
+      }
+
+      /* Margins */
+      .ltr .ml-2 {
+        margin-left: 0.5rem !important;
+      }
+      .ltr .mr-2 {
+        margin-right: 0.5rem !important;
+      }
+      .ltr .ml-4 {
+        margin-left: 1rem !important;
+      }
+      .ltr .mr-4 {
+        margin-right: 1rem !important;
+      }
+
+      .rtl .ml-2 {
+        margin-left: 0 !important;
+        margin-right: 0.5rem !important;
+      }
+      .rtl .mr-2 {
+        margin-right: 0 !important;
+        margin-left: 0.5rem !important;
+      }
+      .rtl .ml-4 {
+        margin-left: 0 !important;
+        margin-right: 1rem !important;
+      }
+      .rtl .mr-4 {
+        margin-right: 0 !important;
+        margin-left: 1rem !important;
+      }
+
+      /* Paddings */
+      .ltr .pl-12 {
+        padding-left: 3rem !important;
+      }
+      .ltr .pr-12 {
+        padding-right: 3rem !important;
+      }
+
+      .rtl .pl-12 {
+        padding-left: 0 !important;
+        padding-right: 3rem !important;
+      }
+      .rtl .pr-12 {
+        padding-right: 0 !important;
+        padding-left: 3rem !important;
+      }
+
+      /* Flexbox */
+      .ltr .flex-row {
+        flex-direction: row !important;
+      }
+      .rtl .flex-row {
+        flex-direction: row-reverse !important;
+      }
+
+      /* Space utilities */
+      .ltr .space-x-4 > * + * {
+        margin-left: 1rem !important;
+      }
+      .rtl .space-x-4 > * + * {
+        margin-left: 0 !important;
+        margin-right: 1rem !important;
+      }
+
+      .ltr .space-x-8 > * + * {
+        margin-left: 2rem !important;
+      }
+      .rtl .space-x-8 > * + * {
+        margin-left: 0 !important;
+        margin-right: 2rem !important;
+      }
+
+      /* Order management - CRITICAL FIX */
+      .ltr .md\:order-1 {
+        order: 1 !important;
+      }
+      .ltr .md\:order-2 {
+        order: 2 !important;
+      }
+
+      .rtl .md\:order-1 {
+        order: 1 !important;
+      }
+      .rtl .md\:order-2 {
+        order: 2 !important;
+      }
+
+      /* Language switcher - keep LTR */
+      .rtl .language-switcher,
+      .rtl .lang-btn,
+      .rtl .lang-dropdown {
+        direction: ltr !important;
+      }
+
+      /* Dark mode toggle - keep LTR */
+      .rtl #theme-toggle {
+        direction: ltr !important;
+      }
+
+      /* Mobile menu button - keep LTR */
+      .rtl #mobile-menu-button {
+        direction: ltr !important;
+      }
+
+      /* Icons - keep natural direction */
+      .rtl .fas,
+      .rtl .fab,
+      .rtl .fa {
+        direction: ltr !important;
+      }
+
+      /* Images - keep natural */
+      .rtl img {
+        direction: ltr !important;
+      }
+
+      /* Enhanced glass cards for What We Do section */
+      .section-bg .glass-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(102, 12, 27, 0.15);
+        box-shadow: 0 8px 32px rgba(102, 12, 27, 0.12);
+      }
+
+      .dark .section-bg .glass-card {
+        background: rgba(45, 27, 31, 0.85);
+        border: 1px solid rgba(212, 175, 55, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Stats section glass cards */
+      .gradient-bg .glass-card {
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 12px 40px rgba(255, 255, 255, 0.15);
+      }
+
+      /* Ensure all containers have proper direction */
+      .ltr .container {
+        direction: ltr !important;
+      }
+
+      .rtl .container {
+        direction: rtl !important;
+      }
+
+      /* Mobile menu text alignment */
+      .ltr #mobile-menu a {
+        text-align: left !important;
+      }
+
+      .rtl #mobile-menu a {
+        text-align: right !important;
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <nav
+      class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold text-primary dark:text-secondary">The Great Debaters</h1>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+              data-translate="nav-home"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+              data-translate="nav-about"
+              >About Us</a
+            >
+            <a
+              href="team.html"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+              data-translate="nav-team"
+              >Our Team</a
+            >
+            <a
+              href="latestEvents.html"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+              >Latest Events</a
+            >
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+              <button class="lang-btn" id="lang-toggle">
+                <span class="lang-text" id="current-lang">EN</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+              </button>
+
+              <div class="lang-dropdown" id="lang-dropdown">
+                <div class="lang-option" data-lang="en">
+                  <span class="lang-flag">🇺🇸</span>
+                  <span class="lang-text">English</span>
+                </div>
+                <div class="lang-option" data-lang="fr">
+                  <span class="lang-flag">🇫🇷</span>
+                  <span class="lang-text">Français</span>
+                </div>
+                <div class="lang-option" data-lang="ar">
+                  <span class="lang-flag">🇸🇦</span>
+                  <span class="lang-text">العربية</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dark/Light Mode Toggle -->
+            <button
+              id="theme-toggle"
+              class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+            >
+              <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button
+              id="mobile-menu-button"
+              class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a
+            href="index.html"
+            class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+            data-translate="nav-home"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+            data-translate="nav-about"
+            >About Us</a
+          >
+          <a
+            href="team.html"
+            class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+            data-translate="nav-team"
+            >Our Team</a
+          >
+          <a
+            href="latestEvents.html"
+            class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
+            data-translate="nav-events"
+            >Latest Events</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-20 text-white transition-colors duration-300">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold mb-6">Meet Our Team</h1>
+        <p class="text-xl max-w-3xl mx-auto opacity-90">
+          The passionate students behind The Great Debaters FST Errachidia - dedicated to fostering
+          intellectual discourse and critical thinking on campus.
+        </p>
+      </div>
+    </section>
+
+    <!-- Executive Board Section -->
+    <section class="py-16 section-bg transition-colors duration-300">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary dark:text-secondary mb-4">
+          Executive Board
+        </h2>
+        <p class="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+          Our leadership team oversees the strategic direction and operations of the club.
+        </p>
+
+        <div class="relative">
+          <!-- Hierarchy Line -->
+          <div class="hierarchy-line hidden lg:block"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- President -->
+            <div class="flex flex-col items-center team-card">
+              <div
+                class="relative z-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center w-full"
+              >
+                <div
+                  class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                    alt="Youssef Alami"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-xl font-bold text-primary dark:text-secondary">
+                  El mouhaddine Fatima ezzahra
+                </h3>
+                <div
+                  class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+                >
+                  Presidente
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 mt-3">
+                  Engineering student in Chemistry with a passion for political discourse. Leads the
+                  club's strategic vision and represents The Great Debaters at university events.
+                </p>
+                <div class="flex justify-center space-x-3 mt-4">
+                  <a
+                    href="#"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vice President -->
+            <div class="flex flex-col items-center team-card">
+              <div
+                class="relative z-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center w-full"
+              >
+                <div
+                  class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Fatima Zahra Benali"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-xl font-bold text-primary dark:text-secondary">
+                  Zoubine Soulaimane
+                </h3>
+                <div
+                  class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+                >
+                  Vice President
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 mt-3">
+                  Software Engineering bachelor student specializing in AI. Coordinates club
+                  activities and supports the president in strategic planning and decision-making.
+                </p>
+                <div class="flex justify-center space-x-3 mt-4">
+                  <a
+                    href="#"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secretary General -->
+            <div class="flex flex-col items-center team-card">
+              <div
+                class="relative z-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center w-full"
+              >
+                <div
+                  class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                    alt="Amina Toumi"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-xl font-bold text-primary dark:text-secondary">
+                  Hibatoulah moumni
+                </h3>
+                <div
+                  class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+                >
+                  Secretary General
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 mt-3">
+                  Physics student with exceptional organizational skills. Manages club
+                  documentation, meeting minutes, and internal communications between team members.
+                </p>
+                <div class="flex justify-center space-x-3 mt-4">
+                  <a
+                    href="#"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                  >
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Management Team Section -->
+    <section class="py-16 gradient-bg text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Management Team</h2>
+        <p class="text-center opacity-90 max-w-2xl mx-auto mb-12">
+          Our dedicated managers who handle the day-to-day operations and specialized functions of
+          the club.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- HR Manager -->
+          <div class="glass-card rounded-xl p-6 text-center team-card">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-white">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                alt="Karim Idrissi"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Karim Idrissi</h3>
+            <div
+              class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+            >
+              HR Manager
+            </div>
+            <p class="text-sm opacity-90">
+              Mathematics student focused on member recruitment, retention, and organizing
+              team-building activities to maintain club cohesion.
+            </p>
+          </div>
+
+          <!-- Event Manager -->
+          <div class="glass-card rounded-xl p-6 text-center team-card">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-white">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Mehdi El Fassi"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Nouhaila Sghiri</h3>
+            <div
+              class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+            >
+              Event Manager
+            </div>
+            <p class="text-sm opacity-90">
+              Finance Engineering student with exceptional planning skills. Coordinates all club
+              events, from weekly meetings to major tournaments and inter-university competitions.
+            </p>
+          </div>
+
+          <!-- Media Manager -->
+          <div class="glass-card rounded-xl p-6 text-center team-card">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-white">
+              <img
+                src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80"
+                alt="Sara Mourad"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Sara Mourad</h3>
+            <div
+              class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+            >
+              Media Manager
+            </div>
+            <p class="text-sm opacity-90">
+              Computer Science student managing our social media presence, content creation, and
+              promotional materials to increase club visibility.
+            </p>
+          </div>
+
+          <!-- Designer -->
+          <div class="glass-card rounded-xl p-6 text-center team-card">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-white">
+              <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Lina Cherkaoui"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Lina Cherkaoui</h3>
+            <div
+              class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+            >
+              Designer
+            </div>
+            <p class="text-sm opacity-90">
+              Civil Engineering student with a creative flair. Develops visual materials, event
+              decorations, and maintains the club's aesthetic identity across all platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cells Chiefs Section -->
+    <section class="py-16 section-bg transition-colors duration-300">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary dark:text-secondary mb-4">
+          Language Cells Chiefs
+        </h2>
+        <p class="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+          Our language specialists who ensure excellence in multilingual debates and help members
+          develop proficiency in different languages.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- English Cell Chief -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center team-card">
+            <div
+              class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Omar Khalfi"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-primary dark:text-secondary">Fassali Aymane</h3>
+            <div
+              class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+            >
+              English Cell Chief
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mt-3">
+              Electrical Engineering student with near-native English proficiency. Leads English
+              debate sessions and helps members improve their argumentation skills in English.
+            </p>
+            <div class="mt-4">
+              <span
+                class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded"
+                >TOEFL: 115/120</span
+              >
+            </div>
+          </div>
+
+          <!-- Arabic Cell Chief -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center team-card">
+            <div
+              class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Kawtar Rahmouni"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-primary dark:text-secondary">Kawtar Rahmouni</h3>
+            <div
+              class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+            >
+              Arabic Cell Chief
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mt-3">
+              Mechanical Engineering student with exceptional Arabic eloquence. Specializes in
+              classical Arabic rhetoric and modern debate techniques in Arabic.
+            </p>
+            <div class="mt-4">
+              <span
+                class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded"
+                >Quran Competition Winner</span
+              >
+            </div>
+          </div>
+
+          <!-- French Cell Chief -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center team-card">
+            <div
+              class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                alt="Hassan Bennis"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-primary dark:text-secondary">Hassan Bennis</h3>
+            <div
+              class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+            >
+              French Cell Chief
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mt-3">
+              Industrial Engineering student fluent in French. Organizes French debate sessions and
+              helps members master the nuances of argumentation in French.
+            </p>
+            <div class="mt-4">
+              <span
+                class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded"
+                >DALF C1 Certified</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Our Team CTA -->
+    <section class="py-16 gradient-bg text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Want to Join Our Team?</h2>
+        <p class="text-xl max-w-2xl mx-auto mb-8 opacity-90">
+          We're always looking for passionate students to help us grow The Great Debaters community
+          at FST Errachidia.
+        </p>
+        <button
+          class="bg-secondary hover:bg-yellow-600 text-gray-900 px-8 py-3 rounded-lg font-medium transition-colors"
+        >
+          Apply for a Position
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primaryDark text-white py-12 transition-colors duration-300">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-8 md:mb-0">
+            <h3 class="text-2xl font-bold mb-4 text-secondary">The Great Debaters</h3>
+            <p class="text-gray-300 max-w-md">
+              Faculty of Sciences and Techniques Errachidia<br />Developing critical thinkers and
+              eloquent speakers since 2018.
+            </p>
+          </div>
+
+          <div class="mb-8 md:mb-0">
+            <h4 class="text-xl font-semibold mb-4 text-secondary">Contact Us</h4>
+            <p class="text-gray-300 mb-2">
+              <i class="fas fa-map-marker-alt mr-2"></i> FST Errachidia, BP 509, Boutalamine,
+              Errachidia
+            </p>
+            <p class="text-gray-300 mb-2">
+              <i class="fas fa-envelope mr-2"></i> debaters@fst-errachidia.ac.ma
+            </p>
+            <p class="text-gray-300">
+              <i class="fas fa-users mr-2"></i> Meeting: Every Thursday, 6 PM
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold mb-4 text-secondary">Connect With Us</h4>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="bg-primaryLight hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-primaryLight hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-primaryLight hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-primaryLight mt-8 pt-8 text-center text-gray-300">
+          <p>&copy; 2023 The Great Debaters - FST Errachidia. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
