@@ -145,18 +145,6 @@ class LanguageManager {
         'vision-desc':
           'To establish FST Errachidia as a regional hub for intellectual discourse and debate excellence, producing graduates who are not only technically proficient but also exceptional communicators and critical thinkers.',
 
-        // What We Do Sections
-        'what-we-do': 'What We Do',
-        'training-title': 'Comprehensive Training',
-        'training-desc':
-          'We provide structured training sessions that cover argument construction, rebuttal techniques, public speaking, and critical thinking. Our curriculum is designed for debaters of all skill levels.',
-        'competition-title': 'Competitive Experience',
-        'competition-desc':
-          'We participate in regional, national, and international debate tournaments, giving our members opportunities to test their skills against the best.',
-        'community-title': 'Community Engagement',
-        'community-desc':
-          'We organize public debates, workshops, and community discussions on important contemporary issues, fostering dialogue and civic engagement.',
-
         // Team Page
         'team-hero': 'Meet Our Team',
         'team-desc':
