@@ -97,6 +97,7 @@ class LanguageManager {
         'tournaments-won': 'Tournaments Won',
         'years-excellence': 'Years of Excellence',
         // Navigation
+        'nav-title': 'The Great Debaters',
         'nav-home': 'Home',
         'nav-about': 'About Us',
         'nav-team': 'Our Team',
@@ -205,7 +206,7 @@ class LanguageManager {
         'tournaments-won': 'Tournois Gagnés',
         'years-excellence': "Années d'Excellence",
         // Navigation
-        'tite-nav': 'les Grands debateurs',
+        'nav-title': 'les Grands debateurs',
         'nav-home': 'Accueil',
         'nav-about': 'À Propos',
         'nav-team': 'Notre Équipe',
@@ -324,7 +325,7 @@ class LanguageManager {
       },
       ar: {
         // Navigation
-        'tite-nav': 'المتناظرون العظماء',
+        'nav-title': 'المتناظرون العظماء',
 
         'nav-home': 'الرئيسية',
         'nav-about': 'من نحن',
