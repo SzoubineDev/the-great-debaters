@@ -206,7 +206,7 @@ class LanguageManager {
         'tournaments-won': 'Tournois Gagnés',
         'years-excellence': "Années d'Excellence",
         // Navigation
-        'nav-title': 'les Grands debateurs',
+        'nav-title': 'les Grands débateurs',
         'nav-home': 'Accueil',
         'nav-about': 'À Propos',
         'nav-team': 'Notre Équipe',
