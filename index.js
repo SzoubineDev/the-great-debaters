@@ -205,6 +205,7 @@ class LanguageManager {
         'tournaments-won': 'Tournois Gagnés',
         'years-excellence': "Années d'Excellence",
         // Navigation
+        'tite-nav': 'les Grands debateurs',
         'nav-home': 'Accueil',
         'nav-about': 'À Propos',
         'nav-team': 'Notre Équipe',
@@ -323,6 +324,8 @@ class LanguageManager {
       },
       ar: {
         // Navigation
+        'tite-nav': 'المتناظرون العظماء',
+
         'nav-home': 'الرئيسية',
         'nav-about': 'من نحن',
         'nav-team': 'فريقنا',
