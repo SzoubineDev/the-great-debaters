@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -411,11 +412,10 @@
             </div>
 
             <!-- Dark/Light Mode Toggle -->
-            <button
-              id="theme-toggle"
-              class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-            >
+            <button id="theme-toggle" class="p-2 rounded-full" aria-label="Toggle dark mode">
               <i class="fas fa-moon" id="theme-icon"></i>
+              <i class="fas fa-sun" style="display: none"></i>
+              <span class="tooltip">Switch to Dark</span>
             </button>
 
             <!-- Mobile Menu Button -->
@@ -461,8 +461,8 @@
     <!-- Hero Section -->
     <section class="gradient-bg py-20 text-white transition-colors duration-300">
       <div class="container mx-auto px-4 text-center">
-        <h1 class="text-5xl font-bold mb-6">Latest Events</h1>
-        <p class="text-xl max-w-3xl mx-auto opacity-90">
+        <h1 class="text-5xl font-bold mb-6" data-translate="events-hero-title">Latest Events</h1>
+        <p class="text-xl max-w-3xl mx-auto opacity-90" data-translate="events-hero-desc">
           Stay tuned for our upcoming debates, workshops, and tournaments
         </p>
       </div>
@@ -479,14 +479,23 @@
             >
               <i class="fas fa-calendar-plus text-4xl text-white"></i>
             </div>
-            <h2 class="text-4xl font-bold text-primary dark:text-secondary mb-6">
+            <h2
+              class="text-4xl font-bold text-primary dark:text-secondary mb-6"
+              data-translate="coming-soon-title"
+            >
               Exciting Events Coming Soon!
             </h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p
+              class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
+              data-translate="coming-soon-desc"
+            >
               We're preparing something special for our debating community. New events, tournaments,
               and workshops will be announced shortly.
             </p>
-            <div class="bg-primaryLight text-white inline-block px-6 py-3 rounded-lg font-semibold">
+            <div
+              class="bg-primaryLight text-white inline-block px-6 py-3 rounded-lg font-semibold"
+              data-translate="stay-connected"
+            >
               Stay Connected for Updates
             </div>
           </div>
@@ -502,9 +511,19 @@
               >
                 <i class="fas fa-flag-usa text-2xl text-white"></i>
               </div>
-              <h3 class="text-2xl font-bold text-primary dark:text-secondary mb-4">English</h3>
-              <div class="text-4xl font-bold text-gray-800 dark:text-white mb-4">Coming Soon</div>
-              <p class="text-gray-600 dark:text-gray-300">
+              <h3
+                class="text-2xl font-bold text-primary dark:text-secondary mb-4"
+                data-translate="english-events"
+              >
+                English
+              </h3>
+              <div
+                class="text-4xl font-bold text-gray-800 dark:text-white mb-4"
+                data-translate="english-coming"
+              >
+                Coming Soon
+              </div>
+              <p class="text-gray-600 dark:text-gray-300" data-translate="english-desc">
                 Exciting English debate events and workshops are in preparation
               </p>
             </div>
@@ -519,9 +538,19 @@
               >
                 <i class="fas fa-mosque text-2xl text-gray-900"></i>
               </div>
-              <h3 class="text-2xl font-bold text-primary dark:text-secondary mb-4">العربية</h3>
-              <div class="text-4xl font-bold text-gray-800 dark:text-white mb-4">قريباً</div>
-              <p class="text-gray-600 dark:text-gray-300">
+              <h3
+                class="text-2xl font-bold text-primary dark:text-secondary mb-4"
+                data-translate="arabic-events"
+              >
+                العربية
+              </h3>
+              <div
+                class="text-4xl font-bold text-gray-800 dark:text-white mb-4"
+                data-translate="arabic-coming"
+              >
+                قريباً
+              </div>
+              <p class="text-gray-600 dark:text-gray-300" data-translate="arabic-desc">
                 نحن نعد أحداث ومنافسات نقاشية باللغة العربية قريباً
               </p>
             </div>
@@ -535,9 +564,19 @@
               >
                 <i class="fas fa-flag text-2xl text-white"></i>
               </div>
-              <h3 class="text-2xl font-bold text-primary dark:text-secondary mb-4">Français</h3>
-              <div class="text-4xl font-bold text-gray-800 dark:text-white mb-4">Bientôt</div>
-              <p class="text-gray-600 dark:text-gray-300">
+              <h3
+                class="text-2xl font-bold text-primary dark:text-secondary mb-4"
+                data-translate="french-events"
+              >
+                Français
+              </h3>
+              <div
+                class="text-4xl font-bold text-gray-800 dark:text-white mb-4"
+                data-translate="french-coming"
+              >
+                Bientôt
+              </div>
+              <p class="text-gray-600 dark:text-gray-300" data-translate="french-desc">
                 Des événements de débat passionnants en français arrivent bientôt
               </p>
             </div>
@@ -547,37 +586,45 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Announcement Info -->
             <div class="glass-card rounded-xl p-8 dark:text-secondary text-center lg:text-left">
-              <h3 class="text-2xl font-bold mb-4 text-secondary">What to Expect</h3>
+              <h3 class="text-2xl font-bold mb-4 text-secondary" data-translate="expect-title">
+                What to Expect
+              </h3>
               <ul class="space-y-3 text-left">
                 <li class="flex items-start">
                   <i class="fas fa-trophy text-secondary mt-1 mr-3"></i>
-                  <span>Inter-university debate tournaments</span>
+                  <span data-translate="expect-1">Inter-university debate tournaments</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-users text-secondary mt-1 mr-3"></i>
-                  <span>Public speaking workshops</span>
+                  <span data-translate="expect-2">Public speaking workshops</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-microphone text-secondary mt-1 mr-3"></i>
-                  <span>Multilingual debate sessions</span>
+                  <span data-translate="expect-3">Multilingual debate sessions</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-graduation-cap text-secondary mt-1 mr-3"></i>
-                  <span>Expert-led training sessions</span>
+                  <span data-translate="expect-4">Expert-led training sessions</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-handshake text-secondary mt-1 mr-3"></i>
-                  <span>Community engagement events</span>
+                  <span data-translate="expect-5">Community engagement events</span>
                 </li>
               </ul>
             </div>
 
             <!-- Notification Signup -->
             <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg">
-              <h3 class="text-2xl font-bold text-primary dark:text-secondary mb-4 text-center">
+              <h3
+                class="text-2xl font-bold text-primary dark:text-secondary mb-4 text-center"
+                data-translate="notify-title"
+              >
                 Get Notified First
               </h3>
-              <p class="text-gray-600 dark:text-gray-300 mb-6 text-center">
+              <p
+                class="text-gray-600 dark:text-gray-300 mb-6 text-center"
+                data-translate="notify-desc"
+              >
                 Be the first to know when we announce our upcoming events
               </p>
 
@@ -589,12 +636,14 @@
                     name="email"
                     id="user-email"
                     placeholder="Enter your email"
+                    data-translate="email-placeholder"
                     class="w-full px-4 py-3 mb-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                     required
                   />
                   <button
                     type="submit"
                     class="w-full bg-primary hover:bg-primaryDark text-white py-3 rounded-lg font-semibold transition-colors"
+                    data-translate="notify-btn"
                   >
                     Notify Me
                   </button>
@@ -608,17 +657,16 @@
                 >
                   <i class="fas fa-check text-white text-xl"></i>
                 </div>
-                <h4 class="text-lg font-semibold text-green-600 dark:text-green-400 mb-2">
+                <h4
+                  class="text-lg font-semibold text-green-600 dark:text-green-400 mb-2"
+                  data-translate="success-title"
+                >
                   Thank You!
                 </h4>
-                <p class="text-gray-600 dark:text-gray-300">
+                <p class="text-gray-600 dark:text-gray-300" data-translate="success-desc">
                   We'll notify you when events are announced.
                 </p>
               </div>
-
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
             </div>
           </div>
         </div>
@@ -628,7 +676,9 @@
     <!-- Recent Activities Teaser -->
     <section class="py-16 gradient-bg text-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">While You Wait...</h2>
+        <h2 class="text-3xl font-bold text-center mb-12" data-translate="activities-title">
+          While You Wait...
+        </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div class="glass-card rounded-xl p-6 text-center">
@@ -637,8 +687,8 @@
             >
               <i class="fas fa-history text-2xl text-gray-900"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3">Past Events</h3>
-            <p class="text-sm opacity-90">
+            <h3 class="text-xl font-bold mb-3" data-translate="past-events-title">Past Events</h3>
+            <p class="text-sm opacity-90" data-translate="past-events-desc">
               Check out photos and highlights from our previous successful events and tournaments
             </p>
           </div>
@@ -649,8 +699,8 @@
             >
               <i class="fas fa-book-open text-2xl text-gray-900"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3">Resources</h3>
-            <p class="text-sm opacity-90">
+            <h3 class="text-xl font-bold mb-3" data-translate="resources-title">Resources</h3>
+            <p class="text-sm opacity-90" data-translate="resources-desc">
               Access our debate training materials and improve your skills while waiting
             </p>
           </div>
@@ -661,15 +711,16 @@
             >
               <i class="fas fa-user-friends text-2xl text-gray-900"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3">Join Sessions</h3>
-            <p class="text-sm opacity-90">
+            <h3 class="text-xl font-bold mb-3" data-translate="join-sessions-title">
+              Join Sessions
+            </h3>
+            <p class="text-sm opacity-90" data-translate="join-sessions-desc">
               Participate in our weekly practice sessions to stay sharp and connected
             </p>
           </div>
         </div>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-primaryDark text-white py-12 transition-colors duration-300">
       <div class="container mx-auto px-4">
@@ -775,6 +826,6 @@
         });
       }
     </script>
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

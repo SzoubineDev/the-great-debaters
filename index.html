@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -419,11 +420,10 @@
             </div>
 
             <!-- Dark/Light Mode Toggle -->
-            <button
-              id="theme-toggle"
-              class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-            >
+            <button id="theme-toggle" class="p-2 rounded-full" aria-label="Toggle dark mode">
               <i class="fas fa-moon" id="theme-icon"></i>
+              <i class="fas fa-sun" style="display: none"></i>
+              <span class="tooltip">Switch to Dark</span>
             </button>
 
             <!-- Mobile Menu Button -->
@@ -465,7 +465,6 @@
         </div>
       </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="gradient-bg py-16 text-white transition-colors duration-300">
       <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
@@ -778,6 +777,6 @@
         </div>
       </div>
     </footer>
-    <script src="index.js"></script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

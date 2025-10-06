@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -411,11 +412,10 @@
             </div>
 
             <!-- Dark/Light Mode Toggle -->
-            <button
-              id="theme-toggle"
-              class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-            >
+            <button id="theme-toggle" class="p-2 rounded-full" aria-label="Toggle dark mode">
               <i class="fas fa-moon" id="theme-icon"></i>
+              <i class="fas fa-sun" style="display: none"></i>
+              <span class="tooltip">Switch to Dark</span>
             </button>
 
             <!-- Mobile Menu Button -->
@@ -457,12 +457,13 @@
         </div>
       </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="gradient-bg py-20 text-white transition-colors duration-300">
       <div class="container mx-auto px-4 text-center">
-        <h1 class="text-5xl font-bold mb-6">About The Great Debaters</h1>
-        <p class="text-xl max-w-3xl mx-auto opacity-90">
+        <h1 class="text-5xl font-bold mb-6" data-translate="about-hero-title">
+          About The Great Debaters
+        </h1>
+        <p class="text-xl max-w-3xl mx-auto opacity-90" data-translate="about-hero-desc">
           The premier debating society at FST Errachidia, fostering critical thinking, eloquent
           expression, and intellectual discourse since 2018.
         </p>
@@ -484,18 +485,23 @@
             </div>
           </div>
           <div class="md:w-1/2 md:pl-12">
-            <h2 class="text-3xl font-bold text-primary dark:text-secondary mb-6">Who We Are</h2>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <h2
+              class="text-3xl font-bold text-primary dark:text-secondary mb-6"
+              data-translate="who-we-are-title"
+            >
+              Who We Are
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4" data-translate="who-we-are-desc-1">
               The Great Debaters is the official debating club of the Faculty of Sciences and
               Techniques (FST) in Errachidia, established to cultivate a culture of intellectual
               discourse and critical thinking among students.
             </p>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <p class="text-gray-700 dark:text-gray-300 mb-4" data-translate="who-we-are-desc-2">
               As part of FST Errachidia's vibrant student life, we provide a platform for students
               to develop their communication skills, engage with diverse perspectives, and build
               confidence in public speaking.
             </p>
-            <p class="text-gray-700 dark:text-gray-300">
+            <p class="text-gray-700 dark:text-gray-300" data-translate="who-we-are-desc-3">
               Our club brings together students from various scientific and technical backgrounds,
               creating a unique interdisciplinary environment where different viewpoints converge
               and intellectual growth flourishes.
@@ -512,14 +518,14 @@
           <div class="glass-card rounded-xl p-8">
             <div class="text-center mb-6">
               <i class="fas fa-bullseye text-4xl text-secondary mb-4"></i>
-              <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+              <h3 class="text-2xl font-bold mb-4" data-translate="mission-title">Our Mission</h3>
             </div>
-            <p class="mb-4">
+            <p class="mb-4" data-translate="mission-desc-1">
               To empower FST Errachidia students with the skills of critical thinking, articulate
               expression, and confident public speaking through structured debate training and
               competitive experiences.
             </p>
-            <p>
+            <p data-translate="mission-desc-2">
               We aim to create an inclusive environment where every student feels comfortable
               expressing their ideas and engaging in intellectual discourse on important
               contemporary issues.
@@ -529,14 +535,14 @@
           <div class="glass-card rounded-xl p-8">
             <div class="text-center mb-6">
               <i class="fas fa-eye text-4xl text-secondary mb-4"></i>
-              <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+              <h3 class="text-2xl font-bold mb-4" data-translate="vision-title">Our Vision</h3>
             </div>
-            <p class="mb-4">
+            <p class="mb-4" data-translate="vision-desc-1">
               To establish FST Errachidia as a regional hub for intellectual discourse and debate
               excellence, producing graduates who are not only technically proficient but also
               exceptional communicators and critical thinkers.
             </p>
-            <p>
+            <p data-translate="vision-desc-2">
               We envision a campus culture where respectful debate and intellectual curiosity are
               celebrated as essential components of scientific and technical education.
             </p>
@@ -548,7 +554,10 @@
     <!-- What We Do Section -->
     <section id="activities" class="py-16 section-bg transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-primary dark:text-secondary mb-12">
+        <h2
+          class="text-3xl font-bold text-center text-primary dark:text-secondary mb-12"
+          data-translate="activities-title"
+        >
           What We Do as a Debating Club
         </h2>
 
@@ -563,11 +572,14 @@
               >
                 <i class="fas fa-users text-2xl"></i>
               </div>
-              <h3 class="text-xl font-bold text-primary dark:text-secondary mb-2">
+              <h3
+                class="text-xl font-bold text-primary dark:text-secondary mb-2"
+                data-translate="activity-1-title"
+              >
                 Weekly Training Sessions
               </h3>
             </div>
-            <p class="text-gray-700 dark:text-gray-300">
+            <p class="text-gray-700 dark:text-gray-300" data-translate="activity-1-desc">
               We conduct regular workshops covering argument construction, rebuttal techniques,
               speech delivery, and research methodology. These sessions are designed for debaters of
               all experience levels.
@@ -584,11 +596,14 @@
               >
                 <i class="fas fa-trophy text-2xl"></i>
               </div>
-              <h3 class="text-xl font-bold text-primary dark:text-secondary mb-2">
+              <h3
+                class="text-xl font-bold text-primary dark:text-secondary mb-2"
+                data-translate="activity-2-title"
+              >
                 Competitive Debates
               </h3>
             </div>
-            <p class="text-gray-700 dark:text-gray-300">
+            <p class="text-gray-700 dark:text-gray-300" data-translate="activity-2-desc">
               We organize internal tournaments and participate in inter-university competitions,
               providing members with opportunities to test their skills against debaters from other
               institutions.
@@ -605,11 +620,14 @@
               >
                 <i class="fas fa-microphone text-2xl"></i>
               </div>
-              <h3 class="text-xl font-bold text-primary dark:text-secondary mb-2">
+              <h3
+                class="text-xl font-bold text-primary dark:text-secondary mb-2"
+                data-translate="activity-3-title"
+              >
                 Public Speaking Events
               </h3>
             </div>
-            <p class="text-gray-700 dark:text-gray-300">
+            <p class="text-gray-700 dark:text-gray-300" data-translate="activity-3-desc">
               We host public debates on current issues, inviting the wider FST community to engage
               with important topics and witness the power of structured argumentation.
             </p>
@@ -625,11 +643,14 @@
               >
                 <i class="fas fa-handshake text-2xl"></i>
               </div>
-              <h3 class="text-xl font-bold text-primary dark:text-secondary mb-2">
+              <h3
+                class="text-xl font-bold text-primary dark:text-secondary mb-2"
+                data-translate="activity-4-title"
+              >
                 Collaborative Discussions
               </h3>
             </div>
-            <p class="text-gray-700 dark:text-gray-300">
+            <p class="text-gray-700 dark:text-gray-300" data-translate="activity-4-desc">
               We facilitate panel discussions and forums where members can explore complex topics in
               depth, learning to appreciate diverse perspectives and build consensus.
             </p>
@@ -645,11 +666,14 @@
               >
                 <i class="fas fa-graduation-cap text-2xl"></i>
               </div>
-              <h3 class="text-xl font-bold text-primary dark:text-secondary mb-2">
+              <h3
+                class="text-xl font-bold text-primary dark:text-secondary mb-2"
+                data-translate="activity-5-title"
+              >
                 Skill Development
               </h3>
             </div>
-            <p class="text-gray-700 dark:text-gray-300">
+            <p class="text-gray-700 dark:text-gray-300" data-translate="activity-5-desc">
               Beyond debating, we focus on developing transferable skills including critical
               analysis, research proficiency, teamwork, and leadership abilities.
             </p>
@@ -665,11 +689,14 @@
               >
                 <i class="fas fa-hands-helping text-2xl"></i>
               </div>
-              <h3 class="text-xl font-bold text-primary dark:text-secondary mb-2">
+              <h3
+                class="text-xl font-bold text-primary dark:text-secondary mb-2"
+                data-translate="activity-6-title"
+              >
                 Community Outreach
               </h3>
             </div>
-            <p class="text-gray-700 dark:text-gray-300">
+            <p class="text-gray-700 dark:text-gray-300" data-translate="activity-6-desc">
               We extend our activities beyond campus, organizing debate workshops for local schools
               and community organizations to promote the culture of constructive discourse.
             </p>
@@ -681,19 +708,24 @@
     <!-- Why Debate Matters Section -->
     <section class="py-16 gradient-bg text-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Why Debate Matters at FST Errachidia</h2>
+        <h2 class="text-3xl font-bold text-center mb-12" data-translate="why-debate-title">
+          Why Debate Matters at FST Errachidia
+        </h2>
 
         <div class="max-w-4xl mx-auto">
           <div class="glass-card rounded-xl p-8 mb-8">
-            <h3 class="text-2xl font-bold mb-4 text-secondary">
+            <h3
+              class="text-2xl font-bold mb-4 text-secondary"
+              data-translate="science-students-title"
+            >
               For Science and Technology Students
             </h3>
-            <p class="mb-4">
+            <p class="mb-4" data-translate="science-students-desc-1">
               In the fields of science and technology, the ability to clearly articulate complex
               ideas, defend research methodologies, and engage in scholarly discourse is invaluable.
               Debate training enhances these essential professional skills.
             </p>
-            <p>
+            <p data-translate="science-students-desc-2">
               Our members learn to present technical information persuasively, critically evaluate
               scientific claims, and engage in evidence-based argumentation - skills that directly
               complement their academic studies.
@@ -702,45 +734,65 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="glass-card rounded-xl p-6">
-              <h4 class="text-xl font-bold mb-3 text-secondary">Academic Benefits</h4>
+              <h4 class="text-xl font-bold mb-3 text-secondary" data-translate="academic-benefits">
+                Academic Benefits
+              </h4>
               <ul class="space-y-2">
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Enhanced critical thinking abilities</span>
+                  <span data-translate="academic-benefit-1"
+                    >Enhanced critical thinking abilities</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Improved research and analysis skills</span>
+                  <span data-translate="academic-benefit-2"
+                    >Improved research and analysis skills</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Better academic presentation skills</span>
+                  <span data-translate="academic-benefit-3"
+                    >Better academic presentation skills</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Stronger ability to defend scientific positions</span>
+                  <span data-translate="academic-benefit-4"
+                    >Stronger ability to defend scientific positions</span
+                  >
                 </li>
               </ul>
             </div>
 
             <div class="glass-card rounded-xl p-6">
-              <h4 class="text-xl font-bold mb-3 text-secondary">Career Advantages</h4>
+              <h4 class="text-xl font-bold mb-3 text-secondary" data-translate="career-advantages">
+                Career Advantages
+              </h4>
               <ul class="space-y-2">
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Confidence in professional presentations</span>
+                  <span data-translate="career-advantage-1"
+                    >Confidence in professional presentations</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Effective communication with diverse audiences</span>
+                  <span data-translate="career-advantage-2"
+                    >Effective communication with diverse audiences</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Strong negotiation and persuasion skills</span>
+                  <span data-translate="career-advantage-3"
+                    >Strong negotiation and persuasion skills</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                  <span>Leadership and teamwork capabilities</span>
+                  <span data-translate="career-advantage-4"
+                    >Leadership and teamwork capabilities</span
+                  >
                 </li>
               </ul>
             </div>
@@ -752,10 +804,16 @@
     <!-- Join Us CTA -->
     <section id="join" class="py-16 section-bg transition-colors duration-300">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-primary dark:text-secondary mb-6">
+        <h2
+          class="text-3xl font-bold text-primary dark:text-secondary mb-6"
+          data-translate="join-cta-title"
+        >
           Join The Great Debaters Today
         </h2>
-        <p class="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+        <p
+          class="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8"
+          data-translate="join-cta-desc"
+        >
           Become part of FST Errachidia's premier intellectual community. Develop skills that will
           benefit you throughout your academic journey and professional career.
         </p>
@@ -765,13 +823,14 @@
           >
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfi3DYaBKoHLjIWVRofLvTqPvDA0WBwyHlxqFXKMoeh85stRA/viewform?usp=header"
+              data-translate="attend-meeting-btn"
               >Attend Our Next Meeting</a
             >
           </button>
           <button
             class="border border-primary text-primary dark:text-secondary dark:border-secondary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-medium transition-colors"
           >
-            <a href="team.html">Contact our team</a>
+            <a href="team.html" data-translate="contact-team-btn">Contact our team</a>
           </button>
         </div>
       </div>
@@ -834,6 +893,6 @@
       </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

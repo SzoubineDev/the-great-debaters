@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -26,321 +27,6 @@
         },
       };
     </script>
-    <style>
-      .glass-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .gradient-bg {
-        background: linear-gradient(135deg, #660c1b 0%, #4a0913 50%, #8a1225 100%);
-      }
-      .section-bg {
-        background: linear-gradient(135deg, #f8f4f4 0%, #f0e6e8 100%);
-      }
-      .dark .section-bg {
-        background: linear-gradient(135deg, #2d1b1f 0%, #3a2127 100%);
-      }
-
-      /* Language Switcher Styles */
-      .language-switcher {
-        position: relative;
-        display: inline-block;
-      }
-
-      .lang-btn {
-        background: rgba(102, 12, 27, 0.1);
-        border: 1px solid rgba(102, 12, 27, 0.3);
-        color: #660c1b;
-        padding: 8px 16px;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: 500;
-      }
-
-      .dark .lang-btn {
-        background: rgba(212, 175, 55, 0.1);
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        color: #d4af37;
-      }
-
-      .lang-btn:hover {
-        background: rgba(102, 12, 27, 0.2);
-        transform: translateY(-1px);
-      }
-
-      .dark .lang-btn:hover {
-        background: rgba(212, 175, 55, 0.2);
-      }
-
-      .lang-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: white;
-        border: 1px solid rgba(102, 12, 27, 0.2);
-        border-radius: 12px;
-        padding: 8px;
-        margin-top: 8px;
-        min-width: 120px;
-        box-shadow: 0 8px 25px rgba(102, 12, 27, 0.15);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-      }
-
-      .dark .lang-dropdown {
-        background: #2d1b1f;
-        border: 1px solid rgba(212, 175, 55, 0.2);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-      }
-
-      .lang-dropdown.show {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .lang-option {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 12px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        color: #660c1b;
-        font-weight: 500;
-      }
-
-      .dark .lang-option {
-        color: #d4af37;
-      }
-
-      .lang-option:hover {
-        background: rgba(102, 12, 27, 0.1);
-      }
-
-      .dark .lang-option:hover {
-        background: rgba(212, 175, 55, 0.1);
-      }
-
-      .lang-option.active {
-        background: rgba(102, 12, 27, 0.15);
-        color: #660c1b;
-      }
-
-      .dark .lang-option.active {
-        background: rgba(212, 175, 55, 0.15);
-        color: #d4af37;
-      }
-
-      .lang-flag {
-        width: 20px;
-        height: 15px;
-        border-radius: 2px;
-        object-fit: cover;
-      }
-
-      .lang-text {
-        font-size: 14px;
-      }
-
-      /* ===== CLEAN RTL/LTR SUPPORT ===== */
-
-      /* Base direction classes */
-      .ltr {
-        direction: ltr;
-      }
-
-      .rtl {
-        direction: rtl;
-      }
-
-      /* Text alignment */
-      .ltr .text-left {
-        text-align: left !important;
-      }
-      .ltr .text-right {
-        text-align: right !important;
-      }
-      .ltr .text-center {
-        text-align: center !important;
-      }
-
-      .rtl .text-left {
-        text-align: right !important;
-      }
-      .rtl .text-right {
-        text-align: left !important;
-      }
-      .rtl .text-center {
-        text-align: center !important;
-      }
-
-      /* Margins */
-      .ltr .ml-2 {
-        margin-left: 0.5rem !important;
-      }
-      .ltr .mr-2 {
-        margin-right: 0.5rem !important;
-      }
-      .ltr .ml-4 {
-        margin-left: 1rem !important;
-      }
-      .ltr .mr-4 {
-        margin-right: 1rem !important;
-      }
-
-      .rtl .ml-2 {
-        margin-left: 0 !important;
-        margin-right: 0.5rem !important;
-      }
-      .rtl .mr-2 {
-        margin-right: 0 !important;
-        margin-left: 0.5rem !important;
-      }
-      .rtl .ml-4 {
-        margin-left: 0 !important;
-        margin-right: 1rem !important;
-      }
-      .rtl .mr-4 {
-        margin-right: 0 !important;
-        margin-left: 1rem !important;
-      }
-
-      /* Paddings */
-      .ltr .pl-12 {
-        padding-left: 3rem !important;
-      }
-      .ltr .pr-12 {
-        padding-right: 3rem !important;
-      }
-
-      .rtl .pl-12 {
-        padding-left: 0 !important;
-        padding-right: 3rem !important;
-      }
-      .rtl .pr-12 {
-        padding-right: 0 !important;
-        padding-left: 3rem !important;
-      }
-
-      /* Flexbox */
-      .ltr .flex-row {
-        flex-direction: row !important;
-      }
-      .rtl .flex-row {
-        flex-direction: row-reverse !important;
-      }
-
-      /* Space utilities */
-      .ltr .space-x-4 > * + * {
-        margin-left: 1rem !important;
-      }
-      .rtl .space-x-4 > * + * {
-        margin-left: 0 !important;
-        margin-right: 1rem !important;
-      }
-
-      .ltr .space-x-8 > * + * {
-        margin-left: 2rem !important;
-      }
-      .rtl .space-x-8 > * + * {
-        margin-left: 0 !important;
-        margin-right: 2rem !important;
-      }
-
-      /* Order management - CRITICAL FIX */
-      .ltr .md\:order-1 {
-        order: 1 !important;
-      }
-      .ltr .md\:order-2 {
-        order: 2 !important;
-      }
-
-      .rtl .md\:order-1 {
-        order: 1 !important;
-      }
-      .rtl .md\:order-2 {
-        order: 2 !important;
-      }
-
-      /* Language switcher - keep LTR */
-      .rtl .language-switcher,
-      .rtl .lang-btn,
-      .rtl .lang-dropdown {
-        direction: ltr !important;
-      }
-
-      /* Dark mode toggle - keep LTR */
-      .rtl #theme-toggle {
-        direction: ltr !important;
-      }
-
-      /* Mobile menu button - keep LTR */
-      .rtl #mobile-menu-button {
-        direction: ltr !important;
-      }
-
-      /* Icons - keep natural direction */
-      .rtl .fas,
-      .rtl .fab,
-      .rtl .fa {
-        direction: ltr !important;
-      }
-
-      /* Images - keep natural */
-      .rtl img {
-        direction: ltr !important;
-      }
-
-      /* Enhanced glass cards for What We Do section */
-      .section-bg .glass-card {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(102, 12, 27, 0.15);
-        box-shadow: 0 8px 32px rgba(102, 12, 27, 0.12);
-      }
-
-      .dark .section-bg .glass-card {
-        background: rgba(45, 27, 31, 0.85);
-        border: 1px solid rgba(212, 175, 55, 0.15);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      }
-
-      /* Stats section glass cards */
-      .gradient-bg .glass-card {
-        background: rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 12px 40px rgba(255, 255, 255, 0.15);
-      }
-
-      /* Ensure all containers have proper direction */
-      .ltr .container {
-        direction: ltr !important;
-      }
-
-      .rtl .container {
-        direction: rtl !important;
-      }
-
-      /* Mobile menu text alignment */
-      .ltr #mobile-menu a {
-        text-align: left !important;
-      }
-
-      .rtl #mobile-menu a {
-        text-align: right !important;
-      }
-    </style>
   </head>
   <body class="bg-white dark:bg-gray-900 transition-colors duration-300">
     <nav class="bg-white dark:bg-olive shadow-md sticky top-0 z-50 transition-colors duration-300">
@@ -411,11 +97,10 @@
             </div>
 
             <!-- Dark/Light Mode Toggle -->
-            <button
-              id="theme-toggle"
-              class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-            >
+            <button id="theme-toggle" class="p-2 rounded-full" aria-label="Toggle dark mode">
               <i class="fas fa-moon" id="theme-icon"></i>
+              <i class="fas fa-sun" style="display: none"></i>
+              <span class="tooltip">Switch to Dark</span>
             </button>
 
             <!-- Mobile Menu Button -->
@@ -461,8 +146,8 @@
     <!-- Hero Section -->
     <section class="gradient-bg py-20 text-white transition-colors duration-300">
       <div class="container mx-auto px-4 text-center">
-        <h1 class="text-5xl font-bold mb-6">Meet Our Team</h1>
-        <p class="text-xl max-w-3xl mx-auto opacity-90">
+        <h1 class="text-5xl font-bold mb-6" data-translate="team-hero-title">Meet Our Team</h1>
+        <p class="text-xl max-w-3xl mx-auto opacity-90" data-translate="team-hero-desc">
           The passionate students behind The Great Debaters FST Errachidia - dedicated to fostering
           intellectual discourse and critical thinking on campus.
         </p>
@@ -472,10 +157,16 @@
     <!-- Executive Board Section -->
     <section class="py-16 section-bg transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-primary dark:text-secondary mb-4">
+        <h2
+          class="text-3xl font-bold text-center text-primary dark:text-secondary mb-4"
+          data-translate="executive-board-title"
+        >
           Executive Board
         </h2>
-        <p class="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+        <p
+          class="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12"
+          data-translate="executive-board-desc"
+        >
           Our leadership team oversees the strategic direction and operations of the club.
         </p>
 
@@ -498,32 +189,56 @@
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-bold text-primary dark:text-secondary">
+                <h3
+                  class="text-xl font-bold text-primary dark:text-secondary"
+                  data-translate="president-name"
+                >
                   El mouhaddine Fatima ezzahra
                 </h3>
                 <div
                   class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+                  data-translate="president-role"
                 >
-                  Presidente
+                  President
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 mt-3">
+                <p class="text-gray-600 dark:text-gray-300 mt-3" data-translate="president-desc">
                   Engineering student in Chemistry with a passion for political discourse. Leads the
                   club's strategic vision and represents The Great Debaters at university events.
                 </p>
-                <div class="flex justify-center space-x-3 mt-4">
+                <!-- Minimal Contact Links -->
+                <div
+                  class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+                >
+                  <!-- LinkedIn -->
                   <a
-                    href="#"
-                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                    href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                    target="_blank"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="LinkedIn"
                   >
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin-in text-2xl"></i>
                   </a>
+
+                  <!-- Email -->
                   <a
-                    href="#"
-                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                    href="mailto:debaters@fst-errachidia.ac.ma"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="Email"
                   >
-                    <i class="fab fa-twitter"></i>
+                    <i class="fas fa-envelope text-2xl"></i>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    href="https://www.instagram.com/thegreatdebaters_fst"
+                    target="_blank"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="Instagram"
+                  >
+                    <i class="fab fa-instagram text-2xl"></i>
                   </a>
                 </div>
+                <!-- Social links remain the same -->
               </div>
             </div>
 
@@ -541,32 +256,59 @@
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-bold text-primary dark:text-secondary">
+                <h3
+                  class="text-xl font-bold text-primary dark:text-secondary"
+                  data-translate="vice-president-name"
+                >
                   Zoubine Soulaimane
                 </h3>
                 <div
                   class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+                  data-translate="vice-president-role"
                 >
                   Vice President
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 mt-3">
+                <p
+                  class="text-gray-600 dark:text-gray-300 mt-3"
+                  data-translate="vice-president-desc"
+                >
                   Software Engineering bachelor student. Coordinates club activities and supports
                   the president in strategic planning and decision-making.
                 </p>
-                <div class="flex justify-center space-x-3 mt-4">
+                <!-- Minimal Contact Links -->
+                <div
+                  class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+                >
+                  <!-- LinkedIn -->
                   <a
-                    href="#"
-                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                    href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                    target="_blank"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="LinkedIn"
                   >
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin-in text-2xl"></i>
                   </a>
+
+                  <!-- Email -->
                   <a
-                    href="#"
-                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                    href="mailto:debaters@fst-errachidia.ac.ma"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="Email"
                   >
-                    <i class="fab fa-github"></i>
+                    <i class="fas fa-envelope text-2xl"></i>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    href="https://www.instagram.com/thegreatdebaters_fst"
+                    target="_blank"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="Instagram"
+                  >
+                    <i class="fab fa-instagram text-2xl"></i>
                   </a>
                 </div>
+                <!-- Social links remain the same -->
               </div>
             </div>
 
@@ -580,32 +322,56 @@
                 >
                   <img src="images/hiba2.jpg" alt="Hibatoulah" class="w-full h-full object-cover" />
                 </div>
-                <h3 class="text-xl font-bold text-primary dark:text-secondary">
+                <h3
+                  class="text-xl font-bold text-primary dark:text-secondary"
+                  data-translate="secretary-name"
+                >
                   Hibatoulah moumni
                 </h3>
                 <div
                   class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+                  data-translate="secretary-role"
                 >
                   Secretary General
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 mt-3">
+                <p class="text-gray-600 dark:text-gray-300 mt-3" data-translate="secretary-desc">
                   Biology student with exceptional organizational skills. Manages club
                   documentation, meeting minutes, and internal communications between team members.
                 </p>
-                <div class="flex justify-center space-x-3 mt-4">
+                <!-- Minimal Contact Links -->
+                <div
+                  class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+                >
+                  <!-- LinkedIn -->
                   <a
-                    href="#"
-                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                    href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                    target="_blank"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="LinkedIn"
                   >
-                    <i class="fab fa-linkedin mr-3"></i>
+                    <i class="fab fa-linkedin-in text-2xl"></i>
                   </a>
+
+                  <!-- Email -->
                   <a
-                    href="mailto:moumnihibatallah05@gmail.com"
-                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                    href="mailto:debaters@fst-errachidia.ac.ma"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="Email"
                   >
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope text-2xl"></i>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    href="https://www.instagram.com/thegreatdebaters_fst"
+                    target="_blank"
+                    class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                    aria-label="Instagram"
+                  >
+                    <i class="fab fa-instagram text-2xl"></i>
                   </a>
                 </div>
+                <!-- Social links remain the same -->
               </div>
             </div>
           </div>
@@ -616,8 +382,13 @@
     <!-- Management Team Section -->
     <section class="py-16 gradient-bg text-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4">Management Team</h2>
-        <p class="text-center opacity-90 max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-center mb-4" data-translate="management-team-title">
+          Management Team
+        </h2>
+        <p
+          class="text-center opacity-90 max-w-2xl mx-auto mb-12"
+          data-translate="management-team-desc"
+        >
           Our dedicated managers who handle the day-to-day operations and specialized functions of
           the club.
         </p>
@@ -628,61 +399,105 @@
             <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-white">
               <img alt="Karim Idrissi" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-xl font-bold mb-2">Karim Idrissi</h3>
+            <h3 class="text-xl font-bold mb-2" data-translate="hr-manager-name">Karim Idrissi</h3>
             <div
               class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+              data-translate="hr-manager-role"
             >
               HR Manager
             </div>
-            <p class="text-sm opacity-90">
+            <p class="text-sm opacity-90" data-translate="hr-manager-desc">
               Mathematics student focused on member recruitment, retention, and organizing
               team-building activities to maintain club cohesion.
             </p>
-            <div class="flex justify-center space-x-3 mt-4">
+            <!-- Minimal Contact Links -->
+            <div
+              class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+            >
+              <!-- LinkedIn -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="LinkedIn"
               >
-                <i class="daek:text-secondary fab fa-linkedin"></i>
+                <i class="fab fa-linkedin-in text-2xl"></i>
               </a>
+
+              <!-- Email -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="mailto:debaters@fst-errachidia.ac.ma"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Email"
               >
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope text-2xl"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/thegreatdebaters_fst"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
               </a>
             </div>
+            <!-- Social links remain the same -->
           </div>
 
           <!-- Event Manager -->
           <div class="glass-card rounded-xl p-6 text-center team-card">
             <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-white">
-              <img alt="Mehdi El Fassi" class="w-full h-full object-cover" />
+              <img src="images/nouha.png" alt="Mehdi El Fassi" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-xl font-bold mb-2">Nouhaila Sghiri</h3>
+            <h3 class="text-xl font-bold mb-2" data-translate="event-manager-name">
+              Nouhaila Sghiri
+            </h3>
             <div
               class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+              data-translate="event-manager-role"
             >
               Event Manager
             </div>
-            <p class="text-sm opacity-90">
+            <p class="text-sm opacity-90" data-translate="event-manager-desc">
               Finance Engineering student with exceptional planning skills. Coordinates all club
               events, from weekly meetings to major tournaments and inter-university competitions.
             </p>
-            <div class="flex justify-center space-x-3 mt-4">
+            <!-- Minimal Contact Links -->
+            <div
+              class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+            >
+              <!-- LinkedIn -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="LinkedIn"
               >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin-in text-2xl"></i>
               </a>
+
+              <!-- Email -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="mailto:debaters@fst-errachidia.ac.ma"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Email"
               >
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope text-2xl"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/thegreatdebaters_fst"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
               </a>
             </div>
+            <!-- Social links remain the same -->
           </div>
 
           <!-- Media Manager -->
@@ -690,30 +505,51 @@
             <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-white">
               <img alt="Sara Mourad" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-xl font-bold mb-2">Sara Mourad</h3>
+            <h3 class="text-xl font-bold mb-2" data-translate="media-manager-name">Sara Mourad</h3>
             <div
               class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+              data-translate="media-manager-role"
             >
               Media Manager
             </div>
-            <p class="text-sm opacity-90">
+            <p class="text-sm opacity-90" data-translate="media-manager-desc">
               Computer Science student managing our social media presence, content creation, and
               promotional materials to increase club visibility.
             </p>
-            <div class="flex justify-center space-x-3 mt-4">
+            <!-- Minimal Contact Links -->
+            <div
+              class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+            >
+              <!-- LinkedIn -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="LinkedIn"
               >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin-in text-2xl"></i>
               </a>
+
+              <!-- Email -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="mailto:debaters@fst-errachidia.ac.ma"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Email"
               >
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope text-2xl"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/thegreatdebaters_fst"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
               </a>
             </div>
+            <!-- Social links remain the same -->
           </div>
 
           <!-- Designer -->
@@ -725,37 +561,51 @@
                 class="w-full h-full object-cover"
               />
             </div>
-            <h3 class="text-xl font-bold mb-2">Yahya ennayri</h3>
+            <h3 class="text-xl font-bold mb-2" data-translate="designer-name">Yahya ennayri</h3>
             <div
               class="inline-block bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-3"
+              data-translate="designer-role"
             >
               Designer
             </div>
-            <p class="text-sm opacity-90">
+            <p class="text-sm opacity-90" data-translate="designer-desc">
               physics student with a creative flair. Develops visual materials, event decorations,
               and maintains the club's aesthetic identity across all platforms.
             </p>
-            <div class="flex justify-center space-x-3 mt-4">
+            <!-- Minimal Contact Links -->
+            <div
+              class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+            >
+              <!-- LinkedIn -->
               <a
-                href="https://www.linkedin.com/in/yahya-ennayri-7a3a6b2a7/?originalSubdomain=ma"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
-              >
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a
-                href="mailto:yahyaennayri902@gmail.com"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
-              >
-                <i class="fas fa-envelope"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/yahya_ennayri__?igsh=ZTAxNGRudmZtc3N2"
+                href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
                 target="_blank"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="LinkedIn"
               >
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in text-2xl"></i>
+              </a>
+
+              <!-- Email -->
+              <a
+                href="mailto:debaters@fst-errachidia.ac.ma"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope text-2xl"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/thegreatdebaters_fst"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
               </a>
             </div>
+            <!-- Social links remain the same -->
           </div>
         </div>
       </div>
@@ -764,10 +614,16 @@
     <!-- Cells Chiefs Section -->
     <section class="py-16 section-bg transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-primary dark:text-secondary mb-4">
+        <h2
+          class="text-3xl font-bold text-center text-primary dark:text-secondary mb-4"
+          data-translate="language-cells-title"
+        >
           Language Cells Chiefs
         </h2>
-        <p class="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+        <p
+          class="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12"
+          data-translate="language-cells-desc"
+        >
           Our language specialists who ensure excellence in multilingual debates and help members
           develop proficiency in different languages.
         </p>
@@ -780,36 +636,63 @@
             >
               <img alt="Fassali Aymane" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-xl font-bold text-primary dark:text-secondary">Fassali Aymane</h3>
+            <h3
+              class="text-xl font-bold text-primary dark:text-secondary"
+              data-translate="english-chief-name"
+            >
+              Fassali Aymane
+            </h3>
             <div
               class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+              data-translate="english-chief-role"
             >
               English Cell Chief
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mt-3">
+            <p class="text-gray-600 dark:text-gray-300 mt-3" data-translate="english-chief-desc">
               finance Engineering student with near-native English proficiency. Leads English debate
               sessions and helps members improve their argumentation skills in English.
             </p>
             <div class="mt-4">
               <span
                 class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded"
+                data-translate="english-cert"
                 >TOEFL: 115/120</span
               >
             </div>
-            <div class="flex justify-center space-x-3 mt-4">
+            <!-- Minimal Contact Links -->
+            <div
+              class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+            >
+              <!-- LinkedIn -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="LinkedIn"
               >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin-in text-2xl"></i>
               </a>
+
+              <!-- Email -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="mailto:debaters@fst-errachidia.ac.ma"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Email"
               >
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope text-2xl"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/thegreatdebaters_fst"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
               </a>
             </div>
+            <!-- Social links remain the same -->
           </div>
 
           <!-- Arabic Cell Chief -->
@@ -823,36 +706,63 @@
                 class="w-full h-full object-cover"
               />
             </div>
-            <h3 class="text-xl font-bold text-primary dark:text-secondary">Mohamed aouzalen</h3>
+            <h3
+              class="text-xl font-bold text-primary dark:text-secondary"
+              data-translate="arabic-chief-name"
+            >
+              Mohamed aouzalen
+            </h3>
             <div
               class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+              data-translate="arabic-chief-role"
             >
               Arabic Cell Chief
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mt-3">
+            <p class="text-gray-600 dark:text-gray-300 mt-3" data-translate="arabic-chief-desc">
               software Engineering student with exceptional Arabic eloquence. Specializes in
               classical Arabic rhetoric and modern debate techniques in Arabic.
             </p>
             <div class="mt-4">
               <span
                 class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded"
+                data-translate="arabic-cert"
                 >Arabic Competition Winner</span
               >
             </div>
-            <div class="flex justify-center space-x-3 mt-4">
+            <!-- Minimal Contact Links -->
+            <div
+              class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+            >
+              <!-- LinkedIn -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="LinkedIn"
               >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin-in text-2xl"></i>
               </a>
+
+              <!-- Email -->
               <a
-                href="#"
-                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
+                href="mailto:debaters@fst-errachidia.ac.ma"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Email"
               >
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope text-2xl"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/thegreatdebaters_fst"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
               </a>
             </div>
+            <!-- Social links remain the same -->
           </div>
 
           <!-- French Cell Chief -->
@@ -866,36 +776,63 @@
                 class="w-full h-full object-cover"
               />
             </div>
-            <h3 class="text-xl font-bold text-primary dark:text-secondary">Abdel ali rejdali</h3>
+            <h3
+              class="text-xl font-bold text-primary dark:text-secondary"
+              data-translate="french-chief-name"
+            >
+              Abdel ali rejdali
+            </h3>
             <div
               class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mt-2"
+              data-translate="french-chief-role"
             >
               French Cell Chief
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mt-3">
+            <p class="text-gray-600 dark:text-gray-300 mt-3" data-translate="french-chief-desc">
               Industrial Engineering student fluent in French. Organizes French debate sessions and
               helps members master the nuances of argumentation in French.
             </p>
             <div class="mt-4">
               <span
                 class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded"
+                data-translate="french-cert"
                 >DALF C1 Certified</span
               >
-              <div class="flex justify-center space-x-3 mt-4">
-                <a
-                  href="#"
-                  class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
-                >
-                  <i class="fab fa-linkedin"></i>
-                </a>
-                <a
-                  href="#"
-                  class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600"
-                >
-                  <i class="fas fa-envelope"></i>
-                </a>
-              </div>
             </div>
+            <!-- Minimal Contact Links -->
+            <div
+              class="flex justify-center items-center space-x-8 py-6 border-t border-b border-gray-200 dark:border-gray-600"
+            >
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/company/the-great-debaters-fst-errachidia"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in text-2xl"></i>
+              </a>
+
+              <!-- Email -->
+              <a
+                href="mailto:debaters@fst-errachidia.ac.ma"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope text-2xl"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/thegreatdebaters_fst"
+                target="_blank"
+                class="text-primary dark:text-secondary hover:text-primaryDark dark:hover:text-yellow-600 transition-colors duration-300 transform hover:scale-125"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+            </div>
+            <!-- Social links remain the same -->
           </div>
         </div>
       </div>
@@ -904,19 +841,20 @@
     <!-- Join Our Team CTA -->
     <section class="py-16 gradient-bg text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Want to Join Our Team?</h2>
-        <p class="text-xl max-w-2xl mx-auto mb-8 opacity-90">
+        <h2 class="text-3xl font-bold mb-6" data-translate="join-team-title">
+          Want to Join Our Team?
+        </h2>
+        <p class="text-xl max-w-2xl mx-auto mb-8 opacity-90" data-translate="join-team-desc">
           We're always looking for passionate students to help us grow The Great Debaters community
           at FST Errachidia.
         </p>
         <button
           class="bg-secondary hover:bg-yellow-600 text-gray-900 px-8 py-3 rounded-lg font-medium transition-colors"
         >
-          <a href="">Apply for a Position</a>
+          <a href="" data-translate="apply-position-btn">Apply for a Position</a>
         </button>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-primaryDark text-white py-12 transition-colors duration-300">
       <div class="container mx-auto px-4">
@@ -973,6 +911,6 @@
         </div>
       </div>
     </footer>
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
